@@ -1,0 +1,61 @@
+.Card {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.GoBackButton {
+  display: inline-block;
+  width: 100px;
+  height: 28px;
+  margin-bottom: 20px;
+  border: 0;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid grey;
+  border-radius: 2px;
+}
+
+.CardInfo {
+  display: flex;
+}
+
+.CardImageThumb {
+  height: 600px;
+  width: auto;
+}
+
+.CardImageThumb > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.CardDetailsThumb {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+}
+.DetailsList {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.Link {
+  text-decoration: none;
+  color: steelblue;
+}
+
+.LinkActive {
+  color: brown;
+}
+
+.ListItem {
+  margin-right: 20px;
+}
+
+.Overview {
+  max-width: 800px;
+}
