@@ -34,7 +34,9 @@ class MovieDetailsPage extends Component {
 
     // history.push(routes.home);
 
-    history.push(location?.state?.from || routes.home);
+    history.push(
+      location?.state?.from?.state?.from || location?.state?.from || routes.home
+    );
   };
 
   render() {

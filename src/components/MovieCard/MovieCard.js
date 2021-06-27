@@ -1,11 +1,11 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import defaultImage from "../../images/default.jpeg";
 import routes from "../../routes";
 import styles from "./MovieCard.module.css";
 
-const MovieCard = ({ handleGoBack, movie }) => {
+const MovieCard = ({ handleGoBack, movie, location }) => {
   const {
     poster_path,
     title,
@@ -57,7 +57,12 @@ const MovieCard = ({ handleGoBack, movie }) => {
           <NavLink
             className={styles.Link}
             activeClassName={styles.LinkActive}
-            to={`${routes.movies}/${movieId}/cast`}
+            to={{
+              pathname: `${routes.movies}/${movieId}/cast`,
+              state: {
+                from: location,
+              },
+            }}
           >
             <p>Casts</p>
           </NavLink>
@@ -66,7 +71,12 @@ const MovieCard = ({ handleGoBack, movie }) => {
           <NavLink
             className={styles.Link}
             activeClassName={styles.LinkActive}
-            to={`${routes.movies}/${movieId}/reviews`}
+            to={{
+              pathname: `${routes.movies}/${movieId}/reviews`,
+              state: {
+                from: location,
+              },
+            }}
           >
             <p>Reviews</p>
           </NavLink>
@@ -95,4 +105,4 @@ MovieCard.propTypes = {
   }).isRequired,
 };
 
-export default MovieCard;
+export default withRouter(MovieCard);
